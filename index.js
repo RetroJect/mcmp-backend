@@ -13,6 +13,10 @@ const LocalStrategy = require('passport-local').Strategy;
 /* API Routers */
 const api = require('./api');
 
+/* Database */
+const database = require('./database');
+const User = require('./database/models/user');
+
 // Create the express server
 const app = express();
 const PORT = process.env.EXPRESS_PORT || 3001;
@@ -28,15 +32,17 @@ app.use(expressSession());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport.use(new LocalStrategy(User.authenticate()));
-// passport.serializeUser(User.serializeUser());
-// passport.deserializeUser(User.deserializeUser());
+// Tells passport to use the User model for username/password auth
+passport.use(new LocalStrategy(User.authenticate()));
+// Tells passport how to serialize and deserialize a User for a session
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use('/api', api);
 
-// database.once('connected', () => {
-//   console.log('Database connected, starting Express');
-//   app.listen(PORT, () => console.log(`MCMP API started on port ${PORT}`));
-// });
+database.on('error', console.error.bind(console, 'Database connection error:'));
 
-app.listen(PORT, () => console.log(`MCMP API started on port ${PORT}`));
+database.once('open', () => {
+  console.log('Database connected, starting Express');
+  app.listen(PORT, () => console.log(`MCMP API started on port ${PORT}`));
+});
