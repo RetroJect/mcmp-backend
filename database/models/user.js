@@ -11,9 +11,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// Disabled rule as the function needs 'this' binding support
-// eslint-disable-next-line func-names
-userSchema.virtual('fullName').get(function () {
+userSchema.virtual('fullName').get(function getFullName() {
   return `${this.name.first} ${this.name.last}`;
 });
 
