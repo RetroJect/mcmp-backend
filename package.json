@@ -1,0 +1,30 @@
+{
+  "name": "mcmp-backend",
+  "version": "0.1.0",
+  "description": "A web app that allows for easy searching and downloading of Minecraft mods.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest .",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RetroJect/mcmp-backend.git"
+  },
+  "keywords": [
+    "Minecraft",
+    "api"
+  ],
+  "author": "Grayson Doshier",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/RetroJect/mcmp-backend/issues"
+  },
+  "homepage": "https://github.com/RetroJect/mcmp-backend#readme",
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-jest": "^24.1.3"
+  }
+}
