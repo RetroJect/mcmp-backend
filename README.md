@@ -4,7 +4,7 @@
 
 The backend API for MCMP handles storing data of uploaded mods, managing user accounts, and more.
 For an in-depth overview of what the platform does, please see the
-[frontend repository](https://github.com/RetroJect)
+[frontend repository](https://github.com/RetroJect/Minecraft-Centralized-Mod-Platform)
 
 Below are descriptions of how the API is structured.
 Different actions are separated into "routes" by category of what data is being searched for or modified.
