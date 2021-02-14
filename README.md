@@ -1,5 +1,7 @@
 # Minecraft Centralized Mod Platform (MCMP) Backend
 
+![Tests](https://github.com/RetroJect/mcmp-backend/workflows/Node.js%20Test/badge.svg)
+
 The backend API for MCMP handles storing data of uploaded mods, managing user accounts, and more.
 For an in-depth overview of what the platform does, please see the
 [frontend repository](https://github.com/RetroJect)
